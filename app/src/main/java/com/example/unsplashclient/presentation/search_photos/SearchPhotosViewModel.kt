@@ -6,10 +6,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.unsplashclient.common.NetworkResponse
 import com.example.unsplashclient.domain.use_case.SearchPhotosUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
+@HiltViewModel
 class SearchPhotosViewModel @Inject constructor(
     private val searchPhotosUseCase: SearchPhotosUseCase,
 ): ViewModel() {
@@ -17,7 +19,7 @@ class SearchPhotosViewModel @Inject constructor(
     val state: State<SearchPhotosState> = _state
 
     init {
-        searchPhotos("oosaka")
+        searchPhotos("programing")
     }
     fun searchPhotos(query: String) {
         searchPhotosUseCase(query).onEach { result ->
