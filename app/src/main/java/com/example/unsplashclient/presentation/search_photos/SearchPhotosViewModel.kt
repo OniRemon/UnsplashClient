@@ -17,7 +17,7 @@ class SearchPhotosViewModel @Inject constructor(
     val state: State<SearchPhotosState> = _state
 
     init {
-        searchPhotos("oosaka")
+        searchPhotos("programing")
     }
     fun searchPhotos(query: String) {
         searchPhotosUseCase(query).onEach { result ->
