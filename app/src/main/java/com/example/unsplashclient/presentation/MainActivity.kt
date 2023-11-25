@@ -49,28 +49,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun saarchPhoto() {
-    var photo: String = "photo"
-    var himatsubushi : String = "himatsubushispot"
-    val oomiya: Boolean = false
-    if (oomiya) {
-        photo = "photoStore"
-    } else {
-        himatsubushi = "oomiyaikoukana"
-    }
-}
 
-
-@Composable
-private  fun cold(bodyTemperatur:Int) {
-    var place :String = ""
-    if (bodyTemperatur >= 38) {
-        place = "hospital"
-    } else {
-        place = "oomiya"
-    }
-}
 
 
 
