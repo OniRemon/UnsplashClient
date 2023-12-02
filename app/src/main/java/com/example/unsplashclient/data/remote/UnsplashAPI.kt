@@ -13,6 +13,6 @@ interface UnsplashAPI {
     suspend fun searchPhotos(@Query("query") query: String):SearchPhotosResultDto
 
     @Headers("Authorization: Client-ID ${Constants.API_KEY}")
-    @GET("/photos/:id")
-    suspend fun getPhotoById(@Path("id") photoId: String) :PhotoDetailDto
+    @GET("photos/{id}")
+    suspend fun getPhotoById(@Path("id") photoId: String): PhotoDetailDto
 }

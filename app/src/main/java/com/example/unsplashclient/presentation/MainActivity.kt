@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.unsplashclient.presentation.photo_detail.PhotoDetailScreen
 import com.example.unsplashclient.presentation.search_photos.SearchPhotosScreen
 import com.example.unsplashclient.presentation.ui.theme.UnsplashClientTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,13 +35,11 @@ class MainActivity : ComponentActivity() {
                         ) {
                         //画像検索画面
                         composable(route = ScreenRoute.SearchPhotosScreen.route) {
-                            //TODO
                             SearchPhotosScreen(navController = navController)
                         }
                         //画像詳細表示画面
                         composable(route = ScreenRoute.PhotoDetailScreen.route + "/{photoId}") {
-                            //TODO
-
+                            PhotoDetailScreen()
                         }
                     }
                 }
