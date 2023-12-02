@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Icon
+import androidx.compose.material.LocalContentAlpha
+import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
@@ -19,8 +21,9 @@ fun CountLabel(
     imageVector: ImageVector,
     count: Int,
     iconTint: Color,
-    modifier: Modifier = Modifier
-){
+    modifier: Modifier = Modifier,
+    color: Color = LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
+    ){
     Row(modifier = modifier) {
         Icon(
             imageVector = imageVector,
@@ -30,7 +33,7 @@ fun CountLabel(
         Spacer(modifier = Modifier.width(5.dp))
         Text(
             text = count.toString(),
-            color = Color.White,
+            color = color,
             style = MaterialTheme.typography.body1
         )
     }
