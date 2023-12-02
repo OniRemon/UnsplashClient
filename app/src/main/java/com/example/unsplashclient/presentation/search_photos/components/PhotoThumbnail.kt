@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.unsplashclient.domain.model.Photo
 import com.example.unsplashclient.domain.repository.PhotoRepository
+import com.example.unsplashclient.presentation.components.CountLabel
 import com.example.unsplashclient.presentation.ui.theme.UnsplashClientTheme
 
 @Composable
@@ -66,16 +67,10 @@ fun PhotoThumbnail(
                     )
             }
             Spacer(modifier = Modifier.weight(1f))
-            Icon(
+            CountLabel(
                 imageVector = Icons.Default.Favorite,
-                contentDescription ="likes",
-                tint = Color.Magenta
-            )
-            Spacer(modifier = Modifier.width(5.dp))
-            Text(
-                text = photo.likes.toString(),
-                color = Color.White,
-                style = MaterialTheme.typography.body1
+                count = photo.likes ?: 0,
+                iconTint = Color.Magenta
             )
 
         }
