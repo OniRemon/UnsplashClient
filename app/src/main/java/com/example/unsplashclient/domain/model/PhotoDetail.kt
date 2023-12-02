@@ -1,6 +1,6 @@
 package com.example.unsplashclient.domain.model
 
-data class PhotoDetail(
+data class  PhotoDetail(
     val description: String?,
     val likes: Int?,
     val imageUrl: String,
